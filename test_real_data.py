@@ -14,6 +14,7 @@ async def test():
     await client.connect()
     
     print("\n1. Fetching markets from Gamma API...")
+    markets = []
     try:
         markets = await client.list_markets({"limit": 5, "closed": "false"})
         print(f"   [OK] Found {len(markets)} markets\n")
@@ -56,4 +57,3 @@ async def test():
 
 if __name__ == "__main__":
     asyncio.run(test())
-
